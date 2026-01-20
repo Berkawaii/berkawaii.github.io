@@ -61,10 +61,10 @@ const Contact = () => {
       // Replace with your EmailJS service ID, template ID, and Public Key
       emailjs
         .sendForm(
-          "service_ID", // Replace with your EmailJS service ID
-          "template_ID", // Replace with your EmailJS template ID
+          "service_2c34twd", // Replace with your EmailJS service ID
+          "template_shupg9w", // Replace with your EmailJS template ID
           form.current,
-          "YOUR_PUBLIC_KEY" // Replace with your EmailJS public key
+          "LRPIFnctd9hAFxQmT", // Replace with your EmailJS public key
         )
         .then((result) => {
           console.log("Email successfully sent!", result.text);
@@ -132,7 +132,7 @@ const Contact = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               {[
-                { icon: "✉️", title: "Email", text: "acar.berkay@gmail.com" },
+                { icon: "✉️", title: "Email", text: "acar.berkai@gmail.com" },
                 { icon: "📱", title: "Phone", text: "+90 554 428 04 04" },
                 { icon: "📍", title: "Location", text: "İstanbul, Bostancı" },
               ].map((item, index) => (
@@ -175,7 +175,7 @@ const Contact = () => {
                     icon: <FiLinkedin />,
                   },
 
-                  { url: "mailto:acar.berkay@gmail.com", icon: <FiMail /> },
+                  { url: "mailto:acar.berkai@gmail.com", icon: <FiMail /> },
                 ].map((social, index) => (
                   <motion.a
                     key={index}

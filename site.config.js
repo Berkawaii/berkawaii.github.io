@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: "https://iamberkay.com",
+  siteUrl: "https://berkawaii.github.io",
   generateRobotsTxt: true,
   generateSitemap: true,
 };

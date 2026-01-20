@@ -122,7 +122,7 @@ const Footer = () => {
             >
               <FiGithub />
             </SocialLink>
-            <SocialLink href="mailto:acar.berkay@gmail.com">
+            <SocialLink href="mailto:acar.berkai@gmail.com">
               <FiMail />
             </SocialLink>
           </SocialLinks>
