@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import { motion } from "framer-motion";
-import { FiSun, FiMoon, FiMenu, FiX, FiDownload, FiChevronDown } from "react-icons/fi";
+import {
+  FiSun,
+  FiMoon,
+  FiMenu,
+  FiX,
+  FiDownload,
+  FiChevronDown,
+} from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import styled from "styled-components";
 
@@ -166,9 +173,9 @@ const DropdownMenu = styled.div`
   box-shadow: 0 5px 20px var(--shadow);
   min-width: 180px;
   z-index: 200;
-  opacity: ${props => props.isOpen ? 1 : 0};
-  visibility: ${props => props.isOpen ? 'visible' : 'hidden'};
-  transform: translateY(${props => props.isOpen ? '0' : '-10px'});
+  opacity: ${(props) => (props.isOpen ? 1 : 0)};
+  visibility: ${(props) => (props.isOpen ? "visible" : "hidden")};
+  transform: translateY(${(props) => (props.isOpen ? "0" : "-10px")});
   transition: all 0.3s ease;
 
   @media (max-width: 768px) {
@@ -209,7 +216,7 @@ const DropdownItem = styled.a`
   @media (max-width: 768px) {
     padding: 0.5rem 0;
     background: transparent !important;
-    
+
     &:hover {
       color: var(--primary);
       background: transparent !important;
@@ -311,14 +318,14 @@ const Navbar = () => {
   // Dropdown dışına tıklandığında kapatma
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isResumeDropdownOpen && !event.target.closest('.resume-dropdown')) {
+      if (isResumeDropdownOpen && !event.target.closest(".resume-dropdown")) {
         setIsResumeDropdownOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isResumeDropdownOpen]);
 
@@ -400,11 +407,19 @@ const Navbar = () => {
               style={{ display: "inline-flex" }}
             >
               <ResumeDropdown className="resume-dropdown">
-                <ResumeButton 
+                <ResumeButton
                   onClick={() => setIsResumeDropdownOpen(!isResumeDropdownOpen)}
                   aria-label="Download Resume"
                 >
-                  <FiDownload /> Resume <FiChevronDown style={{ transform: isResumeDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }} />
+                  <FiDownload /> Resume{" "}
+                  <FiChevronDown
+                    style={{
+                      transform: isResumeDropdownOpen
+                        ? "rotate(180deg)"
+                        : "rotate(0deg)",
+                      transition: "transform 0.3s ease",
+                    }}
+                  />
                 </ResumeButton>
                 <DropdownMenu isOpen={isResumeDropdownOpen}>
                   <DropdownItem
@@ -415,8 +430,8 @@ const Navbar = () => {
                     <FiDownload /> Mobile Developer
                   </DropdownItem>
                   <DropdownItem
-                    href="/resume/berkay-acar-resume.pdf"
-                    download="berkay-acar-resume.pdf"
+                    href="/resume/Berkay_Acar_fullstack_developer.pdf"
+                    download="Berkay_Acar_fullstack_developer.pdf"
                     onClick={() => setIsResumeDropdownOpen(false)}
                   >
                     <FiDownload /> Full Stack Developer
