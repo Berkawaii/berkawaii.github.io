@@ -42,9 +42,8 @@ const Projects = () => {
       image: "dipo.png",
       category: ["mobile", "web"],
       link: "https://duzeymarket.com",
-      appStore: "https://apps.apple.com/tr/app/d%C3%BCzey-market/id6738417631",
-      playStore:
-        "https://play.google.com/store/apps/details?id=com.duzey.duzey_market_mobil",
+      appStore: "https://apps.apple.com/tr/app/dipo/id6745765259",
+      playStore: "https://play.google.com/store/apps/details?id=com.duzey.dipo",
       tech: ["React", "Flutter", ".NET", "RESTful API", "NopCommerce"],
       video: "https://www.youtube.com/embed/FJ6DWvuHG3Q?si=CVYtj2LPN5nD03fG",
     },
@@ -210,8 +209,8 @@ const Projects = () => {
               {category === "all"
                 ? "All"
                 : category === "web"
-                ? "Web"
-                : "Mobile"}
+                  ? "Web"
+                  : "Mobile"}
             </motion.button>
           ))}
         </motion.div>
@@ -276,7 +275,7 @@ const Projects = () => {
                       display: project.image ? "none" : "flex",
                       background: generateProjectImage(
                         project.title,
-                        project.category
+                        project.category,
                       ).background,
                     }}
                     whileHover={{ scale: 1.05 }}
