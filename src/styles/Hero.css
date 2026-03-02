@@ -144,124 +144,38 @@
   );
 }
 
-.tech-orbit {
+.tech-cloud {
   position: relative;
-  width: 500px;
-  height: 500px;
-  margin: 0 auto;
-  max-width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tech-circle {
-  position: absolute;
   width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  background: radial-gradient(
-    circle at center,
-    rgba(var(--primary-rgb), 0.05) 0%,
-    transparent 70%
-  );
-  backdrop-filter: blur(5px);
+  height: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
 }
 
 .tech-item {
-  position: absolute;
-  padding: 0.8rem 1.6rem;
+  padding: 1rem 2rem;
   background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   box-shadow: 0 8px 32px var(--shadow);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-weight: 600;
   color: var(--text);
   white-space: nowrap;
   transition: var(--transition);
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tech-item:hover {
-  background: var(--primary);
-  color: white !important;
-  transform: scale(1.1) translateZ(20px);
-  box-shadow: 0 12px 40px rgba(var(--primary-rgb), 0.3);
-}
-
-.tech-item:nth-child(1) {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #61dafb; /* React color */
-}
-
-.tech-item:nth-child(2) {
-  top: 25%;
-  right: 70%;
-  color: #512bd4; /* .NET color */
-}
-
-.tech-item:nth-child(3) {
-  top: 30%;
-  right: 0;
-  transform: translateY(-50%);
-  color: #0175c2; /* Flutter color */
-}
-
-.tech-item:nth-child(4) {
-  top: 50%;
-  right: 80%;
-  color: #3178c6; /* TypeScript color */
-}
-
-.tech-item:nth-child(5) {
-  bottom: 30%;
-  right: 0;
-  color: #9b4f96; /* C# color */
-}
-
-.tech-item:nth-child(6) {
-  bottom: 10%;
-  right: 10%;
-  color: #f7df1e; /* JavaScript color */
-}
-
-.tech-item:nth-child(7) {
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #764abc; /* Redux color */
-}
-
-.tech-item:nth-child(8) {
-  bottom: 10%;
-  left: 10%;
-  color: #339933; /* Bloc color */
-}
-
-.tech-item:nth-child(9) {
-  bottom: 30%;
-  left: 10%;
-  color: #00aff0; /* riverppod color */
-}
-
-.tech-item:nth-child(10) {
-  top: 50%;
-  left: 40%;
-  transform: translateY(-50%);
-  color: #30d5c8; /* SQL color */
-}
-.tech-item:nth-child(11) {
-  top: 10%;
-  left: 10%;
-  transform: translateY(-50%);
-  color: #30d5c8; /* azure color */
+  border-color: var(--primary);
 }
 
 .scroll-indicator {

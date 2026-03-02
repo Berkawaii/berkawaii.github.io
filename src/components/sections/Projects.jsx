@@ -41,6 +41,7 @@ const Projects = () => {
         "Comprehensive Help Desk and SLA Management system. Features advanced ticket tracking, automated due date calculations, and interactive reporting dashboards with multi-language support.",
       image: "maestro.png",
       category: ["web"],
+      link:"https://berkawaii.github.io/Maestro/",
       github: "https://github.com/Berkawaii/Maestro",
       tech: ["React", ".NET", "PostgreSQL", "Docker", "SLA Engine"],
     },
@@ -51,6 +52,7 @@ const Projects = () => {
         "Internal automation and workflow optimization platform. Streamlining complex organizational processes through intelligent automation and real-time data sync.",
       image: "pladis.png",
       category: ["web"],
+      link:"https://berkawaii.github.io/PladisAuto/",
       github: "https://github.com/Berkawaii/PladisAuto",
       tech: ["React", "Node.js", "GitHub Actions", "Automation"],
     },
@@ -61,6 +63,7 @@ const Projects = () => {
         "AI-powered image manipulation tool. Leverages advanced models for intelligent editing, background removal, and artistic transformations in the browser.",
       image: "voltran.png",
       category: ["web"],
+      link:"https://voltran-ai-image-editor.web.app/",
       github: "https://github.com/Berkawaii/Voltran-Ai-Image-Editor",
       tech: ["React", "AI/ML", "Canvas API", "Framer Motion"],
     },
@@ -78,6 +81,26 @@ const Projects = () => {
     },
     {
       id: 5,
+      title: "UniCoWallet",
+      description:
+        "Digital expense management solution with a Flutter mobile app, JHipster backend & SAP integration.",
+      image: "unicowallet.png",
+      category: ["mobile", "web"],
+      link: "https://unicowallet.duzey.com.tr/",
+      playStore: "https://play.google.com/store/apps/details?id=com.duzey.masraf&hl=en",
+      tech: ["Flutter", "JHipster", "RESTful API", "Riverpod"],
+    },
+    {
+      id: 6,
+      title: "SATURUN",
+      description:
+        "Field productivity app for mobile sales and operations teams with offline-first architecture. Features local storage and deep linking.",
+      image: "saturun.webp",
+      category: ["mobile"],
+      tech: ["React", ".NET", "Postgre", "Flutter", "Firebase", "Bloc"],
+    },
+    {
+      id: 7,
       title: "Sinflix",
       description:
         "High-performance streaming platform clone. Focuses on cinematic UI transitions, lazy loading of high-resolution media, and responsive design systems.",
@@ -87,7 +110,7 @@ const Projects = () => {
       tech: ["React", "TMDB API", "Styled Components", "Vite"],
     },
     {
-      id: 6,
+      id: 8,
       title: "Adventurer's Ledger",
       description:
         "Fantasy character manager for tabletop RPGs. Track attributes, equipment, and spells with a custom тематический UI designed for immersive gaming sessions.",
@@ -95,6 +118,25 @@ const Projects = () => {
       category: ["mobile"],
       github: "https://github.com/Berkawaii/AdventurersLedger",
       tech: ["Flutter", "Firebase", "Open5e", "Dart"],
+    },
+    {
+      id: 9,
+      title: "DDR (Delivery Routing)",
+      description:
+        "AI-powered smart route prediction system that optimized delivery paths and reduced vehicle usage by 50%.",
+      image: "ddr-system.png",
+      category: ["web"],
+      tech: ["Angular", "TypeScript", "Java", "Python"],
+    },
+    {
+      id: 10,
+      title: "Chastity",
+      description:
+        "Virtual museum experience using Flutter and Europeana APIs. Art lovers can explore and build personal collections.",
+      image: "chastity_logo.png",
+      category: ["mobile"],
+      github: "https://github.com/Berkawaii/chastity",
+      tech: ["Flutter", "Europeana API", "Firebase", "Dart"],
     },
   ];
 

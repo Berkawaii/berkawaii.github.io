@@ -157,60 +157,50 @@ const Hero = () => {
         <motion.div
           className="hero-visual"
           ref={heroVisualRef}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <motion.div
-            className="tech-orbit"
-            animate={{ rotate: 360 }}
-            style={{ display: "flex", maxWidth: "100%" }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          >
-            <div className="tech-circle">
-              {[
-                "React",
-                ".NET",
-                "Flutter",
-                "TypeScript",
-                "C#",
-                "JavaScript",
-                "Redux",
-                "Bloc",
-                "Riverpod",
-                "Azure",
-                "SQL",
-              ].map((tech, index) => (
-                <motion.span
-                  key={tech}
-                  className="tech-item"
-                  whileHover={{
-                    scale: 1.2,
-                    backgroundColor: "var(--primary)",
-                    color: "blue",
-                  }}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.8 + index * 0.1,
-                  }}
-                  style={{
-                    boxSizing: "border-box",
-                    maxWidth: "90%",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
-                >
-                  {tech}
-                </motion.span>
-              ))}
-            </div>
-          </motion.div>
+          <div className="tech-cloud">
+            {[
+              "React",
+              ".NET",
+              "Flutter",
+              "TypeScript",
+              "C#",
+              "JavaScript",
+              "Redux",
+              "Bloc",
+              "Riverpod",
+              "Azure",
+              "SQL",
+              "PostgreSQL",
+            ].map((tech, index) => (
+              <motion.div
+                key={tech}
+                className="tech-item"
+                animate={{
+                  y: [0, -15, 0],
+                  x: [0, 10, 0],
+                }}
+                transition={{
+                  duration: 4 + Math.random() * 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: index * 0.2,
+                }}
+                whileHover={{
+                  scale: 1.1,
+                  backgroundColor: "var(--primary)",
+                  color: "#fff",
+                  boxShadow: "0 10px 30px rgba(var(--primary-rgb), 0.4)",
+                  zIndex: 10
+                }}
+              >
+                {tech}
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
 
