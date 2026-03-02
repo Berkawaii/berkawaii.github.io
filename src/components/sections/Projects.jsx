@@ -96,7 +96,7 @@ const Projects = () => {
       description:
         "Field productivity app for mobile sales and operations teams with offline-first architecture. Features local storage and deep linking.",
       image: "saturun.webp",
-      category: ["mobile"],
+      category: ["mobile", "web"],
       tech: ["React", ".NET", "Postgre", "Flutter", "Firebase", "Bloc"],
     },
     {
@@ -105,7 +105,7 @@ const Projects = () => {
       description:
         "High-performance streaming platform clone. Focuses on cinematic UI transitions, lazy loading of high-resolution media, and responsive design systems.",
       image: "sinflix.png",
-      category: ["web"],
+      category: ["mobile"],
       github: "https://github.com/Berkawaii/Sinflix",
       tech: ["React", "TMDB API", "Styled Components", "Vite"],
     },
@@ -134,9 +134,10 @@ const Projects = () => {
       description:
         "Virtual museum experience using Flutter and Europeana APIs. Art lovers can explore and build personal collections.",
       image: "chastity_logo.png",
-      category: ["mobile"],
+      category: ["mobile", "web"],
+      link:"https://berkawaii.github.io/chastityWeb/",
       github: "https://github.com/Berkawaii/chastity",
-      tech: ["Flutter", "Europeana API", "Firebase", "Dart"],
+      tech: ["Flutter", "Europeana API", "Firebase", "Dart", "React","axios","framer-motion","vite","lucide-react"],
     },
   ];
 
