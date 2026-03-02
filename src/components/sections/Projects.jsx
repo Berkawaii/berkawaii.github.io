@@ -45,16 +45,16 @@ const Projects = () => {
       github: "https://github.com/Berkawaii/Maestro",
       tech: ["React", ".NET", "PostgreSQL", "Docker", "SLA Engine"],
     },
-    {
+       {
       id: 2,
-      title: "PladisAuto",
+      title: "Chastity",
       description:
-        "Internal automation and workflow optimization platform. Streamlining complex organizational processes through intelligent automation and real-time data sync.",
-      image: "pladis.png",
-      category: ["web"],
-      link:"https://berkawaii.github.io/PladisAuto/",
-      github: "https://github.com/Berkawaii/PladisAuto",
-      tech: ["React", "Node.js", "GitHub Actions", "Automation"],
+        "Virtual museum experience using Flutter and Europeana APIs. Art lovers can explore and build personal collections.",
+      image: "chastity_logo.png",
+      category: ["mobile", "web"],
+      link:"https://berkawaii.github.io/chastityWeb/",
+      github: "https://github.com/Berkawaii/chastity",
+      tech: ["Flutter", "Europeana API", "Firebase", "Dart", "React","axios","framer-motion","vite","lucide-react"],
     },
     {
       id: 3,
@@ -128,16 +128,16 @@ const Projects = () => {
       category: ["web"],
       tech: ["Angular", "TypeScript", "Java", "Python"],
     },
-    {
+  {
       id: 10,
-      title: "Chastity",
+      title: "PladisAuto",
       description:
-        "Virtual museum experience using Flutter and Europeana APIs. Art lovers can explore and build personal collections.",
-      image: "chastity_logo.png",
-      category: ["mobile", "web"],
-      link:"https://berkawaii.github.io/chastityWeb/",
-      github: "https://github.com/Berkawaii/chastity",
-      tech: ["Flutter", "Europeana API", "Firebase", "Dart", "React","axios","framer-motion","vite","lucide-react"],
+        "Internal automation and workflow optimization platform. Streamlining complex organizational processes through intelligent automation and real-time data sync.",
+      image: "pladis.png",
+      category: ["web"],
+      link:"https://berkawaii.github.io/PladisAuto/",
+      github: "https://github.com/Berkawaii/PladisAuto",
+      tech: ["React", "Node.js", "GitHub Actions", "Automation"],
     },
   ];
 
