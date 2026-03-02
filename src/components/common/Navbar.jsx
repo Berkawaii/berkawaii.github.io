@@ -75,22 +75,25 @@ const NavLinks = styled.div`
     top: 0;
     right: ${(props) => (props.isOpen ? "0" : "-100%")};
     bottom: 0;
-    width: 70%;
-    max-width: 300px;
-    background-color: var(--background);
-    box-shadow: -5px 0 15px var(--shadow);
+    width: 85%;
+    max-width: 400px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid var(--glass-border);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
     flex-direction: column;
-    padding: 5rem 2rem 2rem;
-    transition: right 0.3s ease;
+    padding: 6rem 2.5rem 2.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 101;
     align-items: flex-start;
-    overflow-y: auto; /* Mobilde kaydırma ekle */
+    overflow-y: auto;
 
     .nav-items-container {
       flex-direction: column;
       align-items: flex-start;
       width: 100%;
-      gap: 1rem;
+      gap: 1.5rem;
     }
   }
 `;
@@ -349,7 +352,7 @@ const Navbar = () => {
         <NavLinks isOpen={isMenuOpen}>
           {isMenuOpen && (
             <MenuButton
-              style={{ position: "absolute", top: "1rem", right: "1rem" }}
+              style={{ position: "absolute", top: "1.5rem", right: "2rem" }}
               onClick={() => setIsMenuOpen(false)}
             >
               <FiX />
