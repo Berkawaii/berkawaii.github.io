@@ -12,11 +12,14 @@
 }
 
 .skill-category {
-  padding: 2rem;
-  border-radius: var(--radius);
+  padding: 2.2rem;
+  border-radius: var(--radius-lg);
   transition: var(--transition);
-  border: 1px solid var(--border);
-  background-color: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px var(--shadow);
 }
 
 .category-header {
@@ -116,11 +119,14 @@
   padding: 2.5rem 2rem;
   text-align: center;
   transition: var(--transition);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background-color: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 8px 32px var(--shadow);
 }
 
 .expertise-item.mobile-bg:before {
@@ -194,8 +200,8 @@
 }
 
 .skill-badge {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius);
   padding: 1rem 0.75rem;
   display: flex;
@@ -204,7 +210,7 @@
   justify-content: center;
   text-align: center;
   transition: var(--transition);
-  box-shadow: 0 2px 5px var(--shadow);
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 .skill-badge-icon {

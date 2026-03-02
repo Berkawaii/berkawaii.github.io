@@ -40,42 +40,26 @@
 .hero-title {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .greeting {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--primary);
-  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
-.name {
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(
-    90deg,
-    var(--primary),
-    var(--secondary),
-    var(--primary)
-  );
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
-}
-
-.title {
-  font-size: 2rem;
-  color: var(--text-light);
-}
+/* Name and Title styling handled in Hero.jsx */
 
 .hero-description {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   max-width: 600px;
-  margin-bottom: 2rem;
-  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+  color: var(--text-light);
 }
 
 .hero-actions {
@@ -162,11 +146,13 @@
 
 .tech-orbit {
   position: relative;
-  width: 450px;
-  height: 450px;
+  width: 500px;
+  height: 500px;
   margin: 0 auto;
   max-width: 100%;
-  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tech-circle {
@@ -174,35 +160,38 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  box-shadow: 0 0 40px var(--shadow);
-  animation: rotate 20s linear infinite;
+  border: 1px solid var(--border);
   background: radial-gradient(
-    circle,
-    rgba(var(--primary-rgb), 0.1),
-    rgba(var(--secondary-rgb), 0.05)
+    circle at center,
+    rgba(var(--primary-rgb), 0.05) 0%,
+    transparent 70%
   );
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  backdrop-filter: blur(5px);
 }
 
 .tech-item {
   position: absolute;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--card-bg);
-  border-radius: var(--radius);
-  box-shadow: 0 5px 15px var(--shadow);
+  padding: 0.8rem 1.6rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 32px var(--shadow);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  transition: all 0.3s ease;
+  color: var(--text);
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.tech-item:hover {
+  background: var(--primary);
+  color: white !important;
+  transform: scale(1.1) translateZ(20px);
+  box-shadow: 0 12px 40px rgba(var(--primary-rgb), 0.3);
 }
 
 .tech-item:nth-child(1) {

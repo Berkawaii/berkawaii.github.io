@@ -102,29 +102,43 @@ const Hero = () => {
         >
           <motion.h1 className="hero-title" variants={fadeInUp}>
             <motion.span className="greeting" variants={fadeInUp}>
-              Hello there, I'm
+              Hello, I'm
             </motion.span>
-            <motion.span className="name" ref={nameRef} variants={fadeInUp}>
+            <motion.span className="name" ref={nameRef} variants={fadeInUp} style={{
+              background: 'linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              fontSize: 'min(10vw, 5rem)',
+              fontWeight: 800,
+              letterSpacing: '-0.02em',
+              lineHeight: 1.1
+            }}>
               Berkay Acar
             </motion.span>
-            <motion.span className="title" variants={fadeInUp}>
-              Fullstack Developer
+            <motion.span className="title" variants={fadeInUp} style={{
+              fontSize: '1.5rem',
+              color: 'var(--text-light)',
+              fontWeight: 500,
+              marginTop: '0.5rem'
+            }}>
+              Architecting Digital Experiences
             </motion.span>
           </motion.h1>
           <motion.p
             className="hero-description"
             variants={fadeInUp}
             transition={{ duration: 0.5, delay: 0.4 }}
-            style={{ maxWidth: "100%" }}
+            style={{ 
+              maxWidth: "600px",
+              fontSize: "1.1rem",
+              lineHeight: "1.7",
+              color: "var(--text-light)",
+              marginTop: "1.5rem"
+            }}
           >
-            I see life as one big puzzle and coding as the ultimate cheat sheet.
-            My passion for solving problems began early (thanks to childhood
-            riddles!), and now I tackle real-world challenges one line of code
-            at a time. What sets me apart? A creative mindset that transforms
-            ideas into striking designs—and a secret stash of coffee for those
-            late-night debugging marathons. When I'm not coding, I'm busy
-            building my own game, proving that fun and functionality can go hand
-            in hand.
+            I transform complex puzzles into elegant code. With a passion for 
+            fullstack excellence and a creative eye for design, I build 
+            solutions that are as functional as they are striking.
           </motion.p>
           <motion.div
             className="hero-actions"
