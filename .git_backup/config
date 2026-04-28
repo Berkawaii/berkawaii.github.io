@@ -1,0 +1,16 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = https://github.com/Berkawaii/berkawaii.github.io.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+	gk-last-accessed = 2026-01-28T11:55:04.854Z
+	gk-last-modified = 2026-01-28T11:57:35.051Z
+	vscode-merge-base = origin/main

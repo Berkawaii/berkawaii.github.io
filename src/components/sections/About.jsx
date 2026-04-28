@@ -7,80 +7,91 @@ const About = () => {
   const { ref: aboutRef, inView } = useScrollAnimation(0.1);
 
   const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0 },
   };
 
   return (
-    <section id="about" className="about-section" ref={aboutRef}>
+    <section id="about" className="about-section" ref={aboutRef} style={{ padding: '8rem 0', backgroundColor: 'var(--background)' }}>
       <div className="container">
-        <motion.h2
-          className="section-title"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : -20 }}
-          transition={{ duration: 0.6 }}
+        <motion.div
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
+          className="responsive-grid"
         >
-          About Me
-        </motion.h2>
-
-        <div className="about-content grid-cols-2">
-          <motion.div
-            className="about-text"
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.2,
-                },
-              },
-            }}
-          >
-            <motion.p
-              className="about-intro"
-              variants={fadeIn}
-              transition={{ duration: 0.5 }}
-            >
-              I’m a versatile <strong>fullstack developer</strong> with over 4
-              years of experience building comprehensive, user-centered, and
-              scalable applications.
-            </motion.p>
-            <motion.p variants={fadeIn} transition={{ duration: 0.5 }}>
-              I have proven skills in delivering end-to-end solutions—from
-              frontend UI/UX to backend API integration. I specialize in
-              optimizing processes, collaborating with cross-functional teams,
-              and continuously improving code quality.
-            </motion.p>
+          <motion.div variants={fadeIn} style={{ position: 'relative' }}>
+            <h2 style={{
+              fontFamily: "'Anton', sans-serif",
+              fontSize: "clamp(3rem, 8vw, 8rem)",
+              lineHeight: 0.9,
+              color: "var(--text)",
+              margin: "0 0 2rem 0",
+              textTransform: "uppercase"
+            }}>
+              CRAFTING<br/>
+              <span style={{ color: "var(--primary)" }}>DIGITAL</span><br/>
+              EXPERIENCES
+            </h2>
+            <div style={{
+              width: '100px',
+              height: '8px',
+              backgroundColor: 'var(--secondary)',
+              marginBottom: '3rem'
+            }}></div>
           </motion.div>
 
-          <div className="about-stats">
-            {[
-              { number: "4+", text: "Years of Experience" },
-              { number: "10+", text: "Completed Projects" },
-              { number: "3", text: "Areas of Expertise" },
-              { number: "40%", text: "Performance Improvement" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                className="stat-card card"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{
-                  opacity: inView ? 1 : 0,
-                  y: inView ? 0 : 30,
-                }}
-                transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 15px 30px var(--shadow)",
-                  borderColor: "var(--primary)",
-                }}
-              >
-                <h3>{stat.number}</h3>
-                <p>{stat.text}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+          <motion.div variants={fadeIn}>
+            <p style={{
+              fontSize: "1.4rem",
+              lineHeight: "1.8",
+              color: "var(--text)",
+              marginBottom: "1.5rem",
+              fontWeight: 500
+            }}>
+              I am a versatile fullstack developer with over 4 years of experience, specializing in modernizing legacy systems and designing seamless cross-platform architectural solutions.
+            </p>
+            <p style={{
+              fontSize: "1.1rem",
+              lineHeight: "1.8",
+              color: "var(--text-light)",
+              marginBottom: "3rem"
+            }}>
+              My expertise spans across React, .NET Core, and Flutter. I'm passionate about efficiency, proven by my track record of building digital wallets and field operation management apps that significantly reduce administrative friction.
+            </p>
+            
+            <div className="stats-grid">
+              {[
+                { number: "4+", text: "Years Experience" },
+                { number: "15+", text: "Enterprise Projects" },
+                { number: "75%", text: "Efficiency Gain" },
+                { number: "100%", text: "Passion for UI" },
+              ].map((stat, index) => (
+                <div key={index} style={{
+                  borderTop: '2px solid var(--border)',
+                  borderBottom: '2px solid var(--border)',
+                  padding: '1.5rem 0',
+                  textAlign: 'center'
+                }}>
+                  <h3 style={{
+                    fontFamily: "'Anton', sans-serif",
+                    fontSize: '3rem',
+                    color: 'var(--primary)',
+                    margin: '0 0 0.5rem 0'
+                  }}>{stat.number}</h3>
+                  <p style={{
+                    textTransform: 'uppercase',
+                    fontSize: '0.8rem',
+                    letterSpacing: '0.1em',
+                    fontWeight: 700,
+                    margin: 0,
+                    color: 'var(--text)'
+                  }}>{stat.text}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

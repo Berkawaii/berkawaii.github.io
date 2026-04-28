@@ -1,390 +1,165 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
-import { generateProjectImage } from "../../utils/imageGenerator";
-import { FiExternalLink, FiGithub } from "react-icons/fi";
-import { FaAppStore, FaGooglePlay } from "react-icons/fa";
-import { FaPlay } from "react-icons/fa";
-import VideoPopup from "../common/VideoPopup";
-import "../../styles/Projects.css";
+import { FaGithub, FaGooglePlay, FaApple, FaExternalLinkAlt } from "react-icons/fa";
+
+const projects = [
+  {
+    title: "Cruwell's Vox",
+    description: "Real-time voice collaboration platform powered by LiveKit SFU, Firebase, React, and Electron.",
+    tech: ["React", "Electron", "Firebase", "LiveKit"],
+    bgColor: "#2A2A2A", // Dark Espresso
+    color: "#FBF5E7",
+    rotate: 3,
+    links: {
+      github: "https://github.com/Berkawaii/Cruwell-s-Vox",
+      live: "https://cruwellsvox.web.app/"
+    }
+  },
+  {
+    title: "Dipo",
+    description: "Comprehensive B2B & B2C integrated marketplace application. Delivering dynamic catalogs and robust sales infrastructure.",
+    tech: ["Flutter", "Dart", "Firebase"],
+    bgColor: "#F5A623", // Mustard Yellow
+    color: "#2A2A2A",
+    rotate: -1,
+    links: {
+      playstore: "https://play.google.com/store/apps/details?id=com.duzey.dipo&hl=tr",
+      appstore: "https://apps.apple.com/tr/app/dipo/id6745765259?l=tr"
+    }
+  },
+  {
+    title: "Chastity",
+    description: "Interactive online museum platform providing seamless exhibition exploration with high-performance digital displays.",
+    tech: ["React", "JavaScript", "CSS"],
+    bgColor: "#D70321", // Crimson
+    color: "#FBF5E7",
+    rotate: -2,
+    links: {
+      github: "https://github.com/Berkawaii/chastity",
+      live: "https://berkawaii.github.io/chastityWeb/"
+    }
+  },
+  {
+    title: "UniCoWallet",
+    description: "Digital wallet and expense management application that achieved a 75% reduction in paperwork for field operations. Enterprise mobile solution.",
+    tech: ["Flutter", ".NET Core"],
+    bgColor: "#CBA058", // Gold
+    color: "#2A2A2A",
+    rotate: 1,
+    links: {
+      playstore: "https://play.google.com/store/apps/details?id=com.duzey.masraf&hl=tr"
+    }
+  }
+];
 
 const Projects = () => {
   const { ref: projectsRef, inView } = useScrollAnimation(0.1);
-  const [filter, setFilter] = useState("all");
-  const [videoPopup, setVideoPopup] = useState({
-    isOpen: false,
-    videoUrl: "",
-    title: "",
-  });
-
-  const openVideoPopup = (videoUrl, title) => {
-    setVideoPopup({
-      isOpen: true,
-      videoUrl,
-      title,
-    });
-  };
-
-  const closeVideoPopup = () => {
-    setVideoPopup({
-      isOpen: false,
-      videoUrl: "",
-      title: "",
-    });
-  };
-
-  const projects = [
-    {
-      id: 1,
-      title: "Maestro",
-      description:
-        "Comprehensive Help Desk and SLA Management system. Features advanced ticket tracking, automated due date calculations, and interactive reporting dashboards with multi-language support.",
-      image: "maestro.png",
-      category: ["web"],
-      link:"https://berkawaii.github.io/Maestro/",
-      github: "https://github.com/Berkawaii/Maestro",
-      tech: ["React", ".NET", "PostgreSQL", "Docker", "SLA Engine"],
-    },
-       {
-      id: 2,
-      title: "Chastity",
-      description:
-        "Virtual museum experience using Flutter and Europeana APIs. Art lovers can explore and build personal collections.",
-      image: "chastity_logo.png",
-      category: ["mobile", "web"],
-      link:"https://berkawaii.github.io/chastityWeb/",
-      github: "https://github.com/Berkawaii/chastity",
-      tech: ["Flutter", "Europeana API", "Firebase", "Dart", "React","axios","framer-motion","vite","lucide-react"],
-    },
-    {
-      id: 3,
-      title: "Voltran AI Editor",
-      description:
-        "AI-powered image manipulation tool. Leverages advanced models for intelligent editing, background removal, and artistic transformations in the browser.",
-      image: "voltran.png",
-      category: ["web"],
-      link:"https://voltran-ai-image-editor.web.app/",
-      github: "https://github.com/Berkawaii/Voltran-Ai-Image-Editor",
-      tech: ["React", "AI/ML", "Canvas API", "Framer Motion"],
-    },
-    {
-      id: 4,
-      title: "Dipo (Düzey Market)",
-      description:
-        "NopCommerce integrated mobile app with barcode scanning and real-time stock management. Published on both iOS and Android stores with high user engagement.",
-      image: "dipo.png",
-      category: ["mobile", "web"],
-      link: "https://duzeymarket.com",
-      appStore: "https://apps.apple.com/tr/app/dipo/id6745765259",
-      playStore: "https://play.google.com/store/apps/details?id=com.duzey.dipo",
-      tech: ["Flutter", ".NET", "RESTful API", "NopCommerce"],
-    },
-    {
-      id: 5,
-      title: "UniCoWallet",
-      description:
-        "Digital expense management solution with a Flutter mobile app, JHipster backend & SAP integration.",
-      image: "unicowallet.png",
-      category: ["mobile", "web"],
-      link: "https://unicowallet.duzey.com.tr/",
-      playStore: "https://play.google.com/store/apps/details?id=com.duzey.masraf&hl=en",
-      tech: ["Flutter", "JHipster", "RESTful API", "Riverpod"],
-    },
-    {
-      id: 6,
-      title: "SATURUN",
-      description:
-        "Field productivity app for mobile sales and operations teams with offline-first architecture. Features local storage and deep linking.",
-      image: "saturun.webp",
-      category: ["mobile", "web"],
-      tech: ["React", ".NET", "Postgre", "Flutter", "Firebase", "Bloc"],
-    },
-    {
-      id: 7,
-      title: "Sinflix",
-      description:
-        "High-performance streaming platform clone. Focuses on cinematic UI transitions, lazy loading of high-resolution media, and responsive design systems.",
-      image: "sinflix.png",
-      category: ["mobile"],
-      github: "https://github.com/Berkawaii/Sinflix",
-      tech: ["React", "TMDB API", "Styled Components", "Vite"],
-    },
-    {
-      id: 8,
-      title: "Adventurer's Ledger",
-      description:
-        "Fantasy character manager for tabletop RPGs. Track attributes, equipment, and spells with a custom тематический UI designed for immersive gaming sessions.",
-      image: "adventurersLedger.png",
-      category: ["mobile"],
-      github: "https://github.com/Berkawaii/AdventurersLedger",
-      tech: ["Flutter", "Firebase", "Open5e", "Dart"],
-    },
-    {
-      id: 9,
-      title: "DDR (Delivery Routing)",
-      description:
-        "AI-powered smart route prediction system that optimized delivery paths and reduced vehicle usage by 50%.",
-      image: "ddr-system.png",
-      category: ["web"],
-      tech: ["Angular", "TypeScript", "Java", "Python"],
-    },
-  {
-      id: 10,
-      title: "PladisAuto",
-      description:
-        "Internal automation and workflow optimization platform. Streamlining complex organizational processes through intelligent automation and real-time data sync.",
-      image: "pladis.png",
-      category: ["web"],
-      link:"https://berkawaii.github.io/PladisAuto/",
-      github: "https://github.com/Berkawaii/PladisAuto",
-      tech: ["React", "Node.js", "GitHub Actions", "Automation"],
-    },
-  ];
-
-  const filteredProjects =
-    filter === "all"
-      ? projects
-      : projects.filter((project) => project.category.includes(filter));
-
-  // Card animation variants
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    }),
-    exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
-  };
 
   return (
-    <section id="projects" className="projects-section" ref={projectsRef}>
+    <section id="projects" className="projects-section" ref={projectsRef} style={{ padding: '8rem 0', backgroundColor: 'var(--background)', overflow: 'hidden' }}>
       <div className="container">
-        <motion.h2
-          className="section-title"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : -20 }}
+        
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 30 }}
           transition={{ duration: 0.6 }}
         >
-          Projects
-        </motion.h2>
+          <h2 style={{
+            fontFamily: "'Anton', sans-serif",
+            fontSize: "clamp(4rem, 10vw, 10rem)",
+            color: "var(--text)",
+            margin: "0 0 4rem 0",
+            textTransform: "uppercase",
+            textAlign: "center",
+            letterSpacing: "0.02em"
+          }}>
+            SELECTED <span style={{ color: "var(--primary)" }}>WORKS</span>
+          </h2>
+        </motion.div>
 
-        <motion.div
-          className="projects-filter"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {["all", "web", "mobile"].map((category, index) => (
-            <motion.button
-              key={category}
-              className={`filter-btn ${filter === category ? "active" : ""}`}
-              onClick={() => setFilter(category)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
-              transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem', padding: '2rem 0' }}>
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9, rotate: 0 }}
+              animate={inView ? { 
+                opacity: 1, 
+                scale: 1, 
+                rotate: project.rotate 
+              } : { opacity: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ scale: 1.02, rotate: 0, zIndex: 10 }}
+              style={{
+                backgroundColor: project.bgColor,
+                color: project.color,
+                borderRadius: '30px',
+                padding: '3rem',
+                border: '4px solid var(--text)',
+                boxShadow: '10px 10px 0px var(--text)',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative'
+              }}
             >
-              {category === "all"
-                ? "All"
-                : category === "web"
-                  ? "Web"
-                  : "Mobile"}
-            </motion.button>
+              <h3 style={{
+                fontFamily: "'Anton', sans-serif",
+                fontSize: '2.5rem',
+                letterSpacing: '0.05em',
+                marginBottom: '1rem',
+                textTransform: 'uppercase'
+              }}>{project.title}</h3>
+              
+              <p style={{
+                fontSize: '1.1rem',
+                lineHeight: '1.6',
+                flexGrow: 1,
+                marginBottom: '2rem',
+                fontWeight: 500
+              }}>{project.description}</p>
+              
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '2rem' }}>
+                {project.tech.map((t, i) => (
+                  <span key={i} style={{
+                    backgroundColor: project.color,
+                    color: project.bgColor,
+                    padding: '0.4rem 1rem',
+                    borderRadius: '50px',
+                    fontSize: '0.8rem',
+                    fontWeight: 'bold',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em'
+                  }}>{t}</span>
+                ))}
+              </div>
+
+              {/* Action Links */}
+              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', marginTop: 'auto', borderTop: `2px solid ${project.color}`, paddingTop: '1.5rem' }}>
+                {project.links.github && (
+                  <a href={project.links.github} target="_blank" rel="noopener noreferrer" style={{ color: project.color, fontSize: '1.8rem', display: 'flex', alignItems: 'center', transition: 'transform 0.2s' }} onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'} onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'} title="View on GitHub">
+                    <FaGithub />
+                  </a>
+                )}
+                {project.links.playstore && (
+                  <a href={project.links.playstore} target="_blank" rel="noopener noreferrer" style={{ color: project.color, fontSize: '1.8rem', display: 'flex', alignItems: 'center', transition: 'transform 0.2s' }} onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'} onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'} title="Get it on Google Play">
+                    <FaGooglePlay />
+                  </a>
+                )}
+                {project.links.appstore && (
+                  <a href={project.links.appstore} target="_blank" rel="noopener noreferrer" style={{ color: project.color, fontSize: '1.8rem', display: 'flex', alignItems: 'center', transition: 'transform 0.2s' }} onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'} onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'} title="Download on the App Store">
+                    <FaApple />
+                  </a>
+                )}
+                {project.links.live && (
+                  <a href={project.links.live} target="_blank" rel="noopener noreferrer" style={{ color: project.color, fontSize: '1.6rem', display: 'flex', alignItems: 'center', transition: 'transform 0.2s' }} onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'} onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'} title="View Live App">
+                    <FaExternalLinkAlt />
+                  </a>
+                )}
+              </div>
+            </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div
-          className="projects-grid"
-          layout
-          initial={{ opacity: 0 }}
-          animate={{ opacity: inView ? 1 : 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <AnimatePresence mode="wait">
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                className="project-card"
-                variants={cardVariants}
-                initial="hidden"
-                animate={inView ? "visible" : "hidden"}
-                exit="exit"
-                custom={index}
-                layout
-                whileHover={{
-                  y: -10,
-                  boxShadow: "0 20px 30px var(--shadow)",
-                }}
-              >
-                <div className="project-img-container">
-                  {project.image ? (
-                    <>
-                      <div className="image-wrapper">
-                        <motion.img
-                          className="project-img"
-                          src={`/images/projects/${project.image}`}
-                          alt={project.title}
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.3 }}
-                          onError={(e) => {
-                            e.target.onerror = null;
-                            e.target.style.display = "none";
-                            e.target.nextSibling.style.display = "flex";
-                          }}
-                        />
-                      </div>
-                      {project.video && (
-                        <motion.button
-                          className="video-play-button"
-                          onClick={() =>
-                            openVideoPopup(project.video, project.title)
-                          }
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                        >
-                          <FaPlay />
-                        </motion.button>
-                      )}
-                    </>
-                  ) : null}
-                  <motion.div
-                    className="project-img-placeholder"
-                    style={{
-                      display: project.image ? "none" : "flex",
-                      background: generateProjectImage(
-                        project.title,
-                        project.category,
-                      ).background,
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {
-                      generateProjectImage(project.title, project.category)
-                        .letter
-                    }
-                  </motion.div>
-                </div>
-                <div className="project-content">
-                  <div className="project-header">
-                    <h3 className="project-title">{project.title}</h3>
-                    {project.category.includes("mobile") &&
-                      (project.appStore || project.playStore) && (
-                        <motion.span
-                          className="mobile-badge"
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.3, delay: 0.2 }}
-                          whileHover={{ scale: 1.1 }}
-                        >
-                          Mobile App
-                        </motion.span>
-                      )}
-                  </div>
-                  <p className="project-description">{project.description}</p>
-                  <motion.div
-                    className="project-tech"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                  >
-                    {project.tech.map((tech, idx) => (
-                      <motion.span
-                        key={idx}
-                        className="tech-tag"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.3, delay: 0.4 + idx * 0.1 }}
-                        whileHover={{ scale: 1.1 }}
-                      >
-                        {tech}
-                      </motion.span>
-                    ))}
-                  </motion.div>
-
-                  <div className="project-links">
-                    {project.link && (
-                      <motion.a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="project-link"
-                        whileHover={{ x: 5 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <FiExternalLink /> <span>Web</span>
-                      </motion.a>
-                    )}
-                    {project.github && (
-                      <motion.a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="project-link github-link"
-                        whileHover={{ x: 5 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <FiGithub /> <span>GitHub</span>
-                      </motion.a>
-                    )}
-
-                    {project.category.includes("mobile") && (
-                      <>
-                        <div className="app-store-links">
-                          {project.appStore && (
-                            <motion.a
-                              href={project.appStore}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="project-link app-store-link"
-                              whileHover={{ scale: 1.02 }}
-                              whileTap={{ scale: 0.98 }}
-                              initial={{ opacity: 0, y: 10 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.3, delay: 0.2 }}
-                            >
-                              <FaAppStore /> <span>App Store</span>
-                              <div className="store-badge ios">iOS</div>
-                            </motion.a>
-                          )}
-                          {project.playStore && (
-                            <motion.a
-                              href={project.playStore}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="project-link play-store-link"
-                              whileHover={{ scale: 1.02 }}
-                              whileTap={{ scale: 0.98 }}
-                              initial={{ opacity: 0, y: 10 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.3, delay: 0.3 }}
-                            >
-                              <FaGooglePlay /> <span>PlayStore</span>
-                              <div className="store-badge android">Android</div>
-                            </motion.a>
-                          )}
-                        </div>
-                      </>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+        </div>
       </div>
-      <VideoPopup
-        isOpen={videoPopup.isOpen}
-        videoUrl={videoPopup.videoUrl}
-        title={videoPopup.title}
-        onClose={closeVideoPopup}
-      />
     </section>
   );
 };

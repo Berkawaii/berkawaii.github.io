@@ -1,124 +1,112 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
-import "../../styles/Experience.css";
+
+const experiences = [
+  {
+    role: "Software Developer",
+    company: "Düzey",
+    period: "Nov 2023 - Present",
+    points: [
+      "Led the strategic migration and modernization of legacy Java/Angular projects into high-performance .NET and React architectures.",
+      "Spearheaded UniCoWallet development, achieving a 75% reduction in field operation paperwork.",
+      "Architected cross-platform B2B and Sales Engine mobile applications using Flutter and .NET Core.",
+      "Developed a dynamic Approval Management System ensuring end-to-end workflow traceability."
+    ]
+  },
+  {
+    role: "Jr. Developer",
+    company: "Düzey",
+    period: "Nov 2021 – Oct 2022",
+    points: [
+      "Optimized SAP ERP and SFA workflows by identifying bottlenecks and implementing strategic process improvements.",
+      "Boosted overall team performance metrics by 40% through digital process integration.",
+      "Modernized legacy business logic for seamless data flow between SAP systems and mobile sales apps."
+    ]
+  },
+  {
+    role: "Intern Developer",
+    company: "Başarsoft",
+    period: "Jun 2021 – Sept 2021",
+    points: [
+      "Developed interactive map applications using JavaScript and OpenLayers to visualize complex geospatial data."
+    ]
+  }
+];
 
 const Experience = () => {
   const { ref: expRef, inView } = useScrollAnimation(0.1);
 
-  const experiences = [
-    {
-      id: 1,
-      role: "Software Developer @ Düzey",
-      period: "January 2023 – Present",
-      description:
-        "Developed B2B and SFA mobile applications for Düzey using NopCommerce, .NET Core, React, and Flutter. Reduced paperwork by 75% with UniCoWallet, a digital wallet and expense management app. Built a real-time fleet tracking system and an AI-powered smart route prediction tool (DDR).",
-      tasks: [
-        "Developed B2B and SFA mobile apps using NopCommerce, .NetCore,React and Flutter, significantly improving field operations",
-        "Built digital wallet and expense management app (UniCoWallet) reducing paperwork by 75%.",
-        "Designed and launched a fleet tracking system for real-time vehicle monitoring.",
-        "Engineered DDR (Dynamic Delivery Routing), a smart route prediction system that optimized shipment paths and reduced vehicle usage by 50%.",
-        "Worked on both frontend and backend tasks, integrating .NET-based services and REST APIs.",
-        "Led UI/UX efforts for multiple projects with a focus on mobile responsiveness and usability.",
-      ],
-      tech: ["React", ".NET Core", "C#", "Flutter", "RESTful APIs"],
-    },
-    {
-      id: 2,
-      role: "Jr. Developer @ Düzey",
-      period: "September 2021 - December 2022",
-      description:
-        "Analyzed SAP ERP and SFA processes to enhance operational efficiency. Improved team performance metrics by 40% through strategic process optimizations.",
-      tasks: [
-        "Demonstrated expertise in process optimization and improvement by analyzing and redesigning SAP ERP and SFA processes. ",
-        "Applied data-driven insights to identify areas for improvement and implement sustainable solutions.",
-        "Conducted thorough assessments of operational processes, pinpointing areas for enhancement; introduced targeted strategies that boosted team performance metrics by 40% and improved service delivery timelines. ",
-      ],
-      tech: ["SAP", "Process Optimization"],
-    },
-    {
-      id: 3,
-      role: "Intern Developer @ Başarsoft",
-      period: "June 2021 - September 2021",
-      description:
-        "Developed custom map applications focusing on interactive features and geospatial data visualization.",
-      tasks: [
-        "Collaborated with senior developers to enhance application performance and user experience.",
-      ],
-      tech: ["JavaScript", "OpenLayers"],
-    },
-  ];
-
   return (
-    <section id="experience" className="experience-section" ref={expRef}>
+    <section id="experience" className="experience-section" ref={expRef} style={{ padding: '8rem 0', backgroundColor: 'var(--background)' }}>
       <div className="container">
-        <motion.h2
-          className="section-title"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : -20 }}
+        
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 30 }}
           transition={{ duration: 0.6 }}
+          className="title-header-flex"
         >
-          Professional Experience
-        </motion.h2>
+          <h2 style={{
+            fontFamily: "'Anton', sans-serif",
+            fontSize: "clamp(3rem, 8vw, 8rem)",
+            color: "var(--primary)",
+            margin: "0",
+            textTransform: "uppercase",
+            lineHeight: 0.9
+          }}>
+            CAREER<br/>ARCHIVE
+          </h2>
+          <span style={{ fontSize: '1.2rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.1em' }}>2021 - Present</span>
+        </motion.div>
 
-        <div className="timeline">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
           {experiences.map((exp, index) => (
             <motion.div
-              key={exp.id}
-              className="timeline-item"
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              animate={{
-                opacity: inView ? 1 : 0,
-                x: inView ? 0 : index % 2 === 0 ? -50 : 50,
-              }}
+              key={index}
+              initial={{ opacity: 0, x: -30 }}
+              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="experience-grid"
             >
-              <div className="timeline-dot"></div>
-              <motion.div
-                className="timeline-content card"
-                whileHover={{
-                  scale: 1.02,
-                  boxShadow: "0 15px 30px var(--shadow)",
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                <h3>{exp.role}</h3>
-                <div className="timeline-period">{exp.period}</div>
-                <p>{exp.description}</p>
-                <div className="timeline-details">
-                  <ul>
-                    {exp.tasks.map((task, idx) => (
-                      <motion.li
-                        key={idx}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{
-                          opacity: inView ? 1 : 0,
-                          x: inView ? 0 : -20,
-                        }}
-                        transition={{ duration: 0.4, delay: 0.3 + idx * 0.1 }}
-                      >
-                        {task}
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="tech-tags">
-                  {exp.tech.map((tech, idx) => (
-                    <motion.span
-                      key={idx}
-                      className="tech-tag"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{
-                        opacity: inView ? 1 : 0,
-                        scale: inView ? 1 : 0.8,
-                      }}
-                      transition={{ duration: 0.3, delay: 0.5 + idx * 0.05 }}
-                    >
-                      {tech}
-                    </motion.span>
+              <div>
+                <h3 style={{
+                  fontFamily: "'Anton', sans-serif",
+                  fontSize: '2rem',
+                  color: 'var(--text)',
+                  margin: '0 0 0.5rem 0',
+                  textTransform: 'uppercase'
+                }}>{exp.role}</h3>
+                <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--secondary)', marginBottom: '0.5rem' }}>{exp.company}</div>
+                <div style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-light)', fontWeight: 600 }}>{exp.period}</div>
+              </div>
+              
+              <div>
+                <ul style={{ listStyleType: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {exp.points.map((point, i) => (
+                    <li key={i} style={{
+                      position: 'relative',
+                      paddingLeft: '1.5rem',
+                      lineHeight: 1.6,
+                      fontSize: '1.1rem',
+                      fontWeight: 500,
+                      color: 'var(--text)'
+                    }}>
+                      <span style={{
+                        content: '""',
+                        position: 'absolute',
+                        left: 0,
+                        top: '10px',
+                        width: '8px',
+                        height: '8px',
+                        backgroundColor: 'var(--primary)',
+                        borderRadius: '50%'
+                      }}></span>
+                      {point}
+                    </li>
                   ))}
-                </div>
-              </motion.div>
+                </ul>
+              </div>
             </motion.div>
           ))}
         </div>

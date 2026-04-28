@@ -1,40 +1,31 @@
 :root {
-  --primary: #6366f1;
-  --primary-rgb: 99, 102, 241;
-  --primary-dark: #4f46e5;
-  --secondary: #ec4899;
-  --secondary-rgb: 236, 72, 153;
-  --accent: #f59e0b;
-  --background: #fafafa;
-  --background-rgb: 250, 250, 250;
-  --text: #171d29;
-  --text-light: #64748b;
-  --card-bg: rgba(255, 255, 255, 0.8);
-  --border: rgba(226, 232, 240, 0.8);
-  --shadow: rgba(0, 0, 0, 0.05);
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.5);
-  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  --radius: 12px;
-  --radius-lg: 24px;
+  --primary: #D70321;
+  --primary-rgb: 215, 3, 33;
+  --primary-dark: #A90219;
+  --secondary: #CBA058;
+  --secondary-rgb: 203, 160, 88;
+  --accent: #5A4D4A;
+  --background: #FBF5E7;
+  --background-rgb: 251, 245, 231;
+  --text: #2A2A2A;
+  --text-light: #5A4D4A;
+  
+  --card-bg: #FBF5E7;
+  --border: #CBA058;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --glass-bg: rgba(251, 245, 231, 0.95);
+  --glass-border: rgba(215, 3, 33, 0.2);
+  --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --radius: 30px;
+  --radius-lg: 50px;
 }
 
 .dark-theme {
-  --primary: #818cf8;
-  --primary-rgb: 129, 140, 248;
-  --primary-dark: #6366f1;
-  --secondary: #f472b6;
-  --secondary-rgb: 244, 114, 182;
-  --accent: #fbbf24;
-  --background: #0f172a;
-  --background-rgb: 15, 23, 42;
-  --text: #f8fafc;
-  --text-light: #94a3b8;
-  --card-bg: rgba(30, 41, 59, 0.7);
-  --border: rgba(51, 65, 85, 0.5);
-  --shadow: rgba(0, 0, 0, 0.3);
-  --glass-bg: rgba(15, 23, 42, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  /* This aesthetic is strictly paper/cream vintage, dark mode is just a slightly deeper cream/mocha to retain the vibe. */
+  --background: #EEDBC5;
+  --card-bg: #EEDBC5;
+  --text: #1A1A1A;
+  --border: #B88A44;
 }
 
 * {
