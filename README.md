@@ -1,120 +1,65 @@
-# Berkay Acar - Personal Portfolio Website
+# Berkay Acar - Modern Vintage Artisanal Portfolio
 
-![Portfolio Preview](public/og-image.png)
+A highly stylized, responsive personal portfolio website built with React. Design inspired by modern editorial luxury and vintage artisanal posters, featuring giant typography, high-contrast layouts, and dynamic micro-animations.
 
-A modern, responsive portfolio website built with React, showcasing my skills, projects, and professional experience. The portfolio features advanced animations using Framer Motion, dark/light mode with Theme Context, responsive design, and contact form integration with EmailJS.
+**Live Demo:** [https://berkawaii.github.io](https://berkawaii.github.io)
+*(Ensure your github pages URL is correct and active)*
 
 ## ✨ Features
 
-- **Responsive Design**: Mobile-first approach ensuring perfect display across all devices
-- **Dark/Light Mode**: Toggle between themes with smooth transitions
-- **Interactive UI**: Smooth animations and transitions using Framer Motion
-- **Optimized Performance**: Fast loading times with optimized images and code
-- **Contact Form**: EmailJS integration for sending messages without a backend
-- **Modern Tech Stack**: Built with React 19, Framer Motion, and styled-components
-- **SEO Optimized**: Meta tags and structured data for better search engine visibility
+- **Artisanal Vintage Aesthetic**: Custom color palette (Cream, Crimson, Gold, Espresso) and typography (Anton & Inter) replacing generic templates.
+- **Editorial UI Elements**: Distinctive solid borders, massive typography, and slightly tilted product cards mimicking vintage print.
+- **Micro-Animations**: Smooth entry animations, scroll-reveals, and a custom loading screen built with `framer-motion`.
+- **Integrated CV & Links**: Direct downloads for multiple CV formats and immediate external routing to active App/Play store products and GitHub projects.
+- **Fully Responsive**: Carefully tuned CSS logic converting wide editorial grids into stacked, aesthetic mobile views without horizontal scrolling bugs.
 
 ## 🚀 Tech Stack
 
-- **React** - Front-end library
-- **Framer Motion** - Animation library
-- **Animejs** - Animation library
-- **Styled Components** - CSS-in-JS styling
-- **EmailJS** - Contact form functionality
-- **React Icons** - Icon library
+- **React 19** - Front-end architecture
+- **Vite/Webpack** - Build processing (Create React App underlying)
+- **Framer Motion** - Scroll and viewport animation orchestration
+- **React Icons** - Lightweight, scalable vectorial UI markers
+- **CSS3 Variables & Flex/Grid** - Pure vanilla CSS structures
 
 ## 🛠️ Installation & Setup
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Berkawaii/PortfolioReactApp.git
-   cd portfolio-website
+   git clone https://github.com/Berkawaii/berkawaii.github.io.git
+   cd berkawaii.github.io
    ```
 
-2. Install dependencies:
+2. Install dependencies (Requires Node.js):
 
    ```bash
    npm install
    ```
 
-3. Create a `.env` file in the root directory and add your EmailJS credentials:
-
-   ```
-   REACT_APP_EMAILJS_SERVICE_ID=your_service_id
-   REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
-   REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key
-   ```
-
-4. Start the development server:
+3. Start the local development server:
 
    ```bash
    npm start
    ```
 
-5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser
+4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## 📦 Build & Deployment
+## 📦 Deployment
 
-1. Build for production:
+This project uses `gh-pages` for simple, automated deployment to GitHub Pages.
 
-   ```bash
-   npm run build
-   ```
+To create a production build and deploy it directly to the `gh-pages` branch:
 
-2. Deploy to Netlify:
-   ```bash
-   npm run deploy
-   ```
+```bash
+npm run deploy
+```
 
-## 💡 Development Tools
-
-- **ResponsiveTester**: Press the monitor icon in the lower right corner to test various screen sizes
+> **Note:** The `homepage` field in `package.json` must exactly match your assigned GitHub pages URL for routing and assets to map correctly.
 
 ## 👨‍💻 Author
 
-**Berkay Acar** - Fullstack Developer
+**Berkay Acar** - Fullstack Developer & Solutions Architect
+- Transforming complex business puzzles into elegant code.
 
-- [LinkedIn](https://linkedin.com/in/imberkay)
+- [LinkedIn](https://www.linkedin.com/in/im-berkay/)
 - [GitHub](https://github.com/Berkawaii)
-- [Portfolio](https://iamberkay.com)
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
