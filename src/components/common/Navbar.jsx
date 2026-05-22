@@ -32,7 +32,8 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       style={{
         position: 'fixed',
-        top: 0,
+        top: -10,
+  
         left: 0,
         right: 0,
         padding: scrolled ? '1rem 2rem' : '2rem',
@@ -42,7 +43,7 @@ const Navbar = () => {
         justifyContent: 'space-between',
         alignItems: 'center',
         zIndex: 1000,
-        transition: 'all 0.3s ease',
+        transition: 'padding 0.3s ease, background-color 0.3s ease, border-bottom 0.3s ease',
       }}
     >
       <div style={{

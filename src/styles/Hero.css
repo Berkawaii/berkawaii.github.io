@@ -180,6 +180,7 @@
 
 .scroll-indicator {
   position: absolute;
+  top: 2rem;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);

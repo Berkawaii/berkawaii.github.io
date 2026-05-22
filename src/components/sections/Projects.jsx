@@ -8,7 +8,7 @@ const projects = [
     title: "Cruwell's Vox",
     description: "Real-time voice collaboration platform powered by LiveKit SFU, Firebase, React, and Electron.",
     tech: ["React", "Electron", "Firebase", "LiveKit"],
-    bgColor: "#2A2A2A", // Dark Espresso
+      bgColor: "#D70321", // Crimson
     color: "#FBF5E7",
     rotate: 3,
     links: {
@@ -19,21 +19,22 @@ const projects = [
   {
     title: "Dipo",
     description: "Comprehensive B2B & B2C integrated marketplace application. Delivering dynamic catalogs and robust sales infrastructure.",
-    tech: ["Flutter", "Dart", "Firebase"],
+    tech: ["Flutter", "Dart", "Firebase", "Azure", ".Net", "Nopcommerce"],
     bgColor: "#F5A623", // Mustard Yellow
     color: "#2A2A2A",
     rotate: -1,
     links: {
       playstore: "https://play.google.com/store/apps/details?id=com.duzey.dipo&hl=tr",
-      appstore: "https://apps.apple.com/tr/app/dipo/id6745765259?l=tr"
+      appstore: "https://apps.apple.com/tr/app/dipo/id6745765259?l=tr",
+      live: "https://duzeymarket.com/"
     }
   },
   {
     title: "Chastity",
     description: "Interactive online museum platform providing seamless exhibition exploration with high-performance digital displays.",
     tech: ["React", "JavaScript", "CSS"],
-    bgColor: "#D70321", // Crimson
-    color: "#FBF5E7",
+     bgColor: "#CBA058", // Gold
+    color: "#2A2A2A",
     rotate: -2,
     links: {
       github: "https://github.com/Berkawaii/chastity",
@@ -41,17 +42,17 @@ const projects = [
     }
   },
   {
-    title: "UniCoWallet",
-    description: "Digital wallet and expense management application that achieved a 75% reduction in paperwork for field operations. Enterprise mobile solution.",
-    tech: ["Flutter", ".NET Core"],
-    bgColor: "#CBA058", // Gold
-    color: "#2A2A2A",
+    title: "Gri",
+    description: "Digital underground fashion archive.",
+    tech: ["Next.js", "Firebase", "Tailwind CSS", "Framer Motion", "Lenis"],
+   bgColor: "#2A2A2A", // Dark Espresso
+    color: "#FBF5E7",
     rotate: 1,
     links: {
-      playstore: "https://play.google.com/store/apps/details?id=com.duzey.masraf&hl=tr"
+      live:"https://griarchive.web.app/"
     }
   }
-];
+];  
 
 const Projects = () => {
   const { ref: projectsRef, inView } = useScrollAnimation(0.1);

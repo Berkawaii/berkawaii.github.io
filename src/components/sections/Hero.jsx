@@ -106,14 +106,13 @@ const Hero = () => {
       </div>
 
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, x: "-50%" }}
+        animate={{ opacity: 1, x: "-50%" }}
         transition={{ delay: 1, duration: 1 }}
         style={{
           position: 'absolute',
-          bottom: '2rem',
+          bottom: '-1rem',
           left: '50%',
-          transform: 'translateX(-50%)',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
