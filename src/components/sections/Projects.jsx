@@ -42,14 +42,14 @@ const projects = [
     }
   },
   {
-    title: "Gri",
-    description: "Digital underground fashion archive.",
-    tech: ["Next.js", "Firebase", "Tailwind CSS", "Framer Motion", "Lenis"],
-   bgColor: "#2A2A2A", // Dark Espresso
+    title: "Game Portfolio",
+    description: "Interactive portfolio showcasing a collection of web-based games and creative development projects.",
+    tech: ["JavaScript", "HTML5", "CSS3", "Canvas"],
+    bgColor: "#2A2A2A", // Dark Espresso
     color: "#FBF5E7",
     rotate: 1,
     links: {
-      live:"https://griarchive.web.app/"
+      live: "https://berkawaii.github.io/games/"
     }
   }
 ];  
