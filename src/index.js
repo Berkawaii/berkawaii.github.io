@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+if (typeof window !== 'undefined' && window.location.href !== 'https://berkayacar.web.app/') {
+  window.location.replace('https://berkayacar.web.app/');
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
